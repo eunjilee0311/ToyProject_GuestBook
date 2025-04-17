@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0px;
+    /* 전체 body를 flex 컨테이너로 만든다 */
+    display: flex;
+    /* 자식 요소들을 위->아래로 배치 */
+    flex-direction: column;
+    /* 텍스트를 가운데 정렬 */
+    text-align: center;
+    /* 가로 방향 가운데 정렬 */
+    align-items: center;
+    /* 세로 방향 가운데 정렬 */
+    justify-content: center;
+    font-family: "Gaegu", sans-serif;
+    background-color:rgb(255, 255, 228);
+    /* background-image: url('background.jpg'); */
+}
+
+button {
+    all: unset;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    align-self: center;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: beige;
+}
+
+input, textarea{
+    border: none;
+    border-bottom: 1px solid rgb(184, 181, 181);
+    padding: 5px;
+}
+
+#input-box {
+    /* width: 430px; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.row {
+    display: flex;
+    gap: 10px;
+    /* flex-wrap: wrap; */
+}
+
+label {
+    font-weight: bold;
+    line-height: 30px;
+}
+
+/* #name-pass-wrapper {
+    display: flex;
+    gap: 10px;
+} */
+
+#name, #password {
+    width: 150px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+#title {
+    width: 380px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+#content {
+    padding: 10px;
+    width: 420px;
+    height: 100px;
+    margin-top: 5px;
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.entry {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    text-align: left;
+    width: 420px;
+}
+.entry p {
+    margin: 5px 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px dashed gray;
+    margin: 10px 0;
+}
