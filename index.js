@@ -43,7 +43,7 @@ async function deleteGuestbook(id, password) {
     
     const data  = await res.json();
     if (data.status === 200) {
-        alert("삭제 성공");
+        //alert("삭제 성공");
         fetchGuestbooks();
     } else {
         alert(data.message);
@@ -64,8 +64,8 @@ function renderGuestBookList(entries) {
             <p><strong>제목:</strong> ${entry.title}</p>
             <hr>
             <p><strong></strong> ${entry.content}</p>
-            <button class="delBtn" data-id="${entry.id}">삭제</button>
             <input type="password" class="delete-password" placeholder="비밀번호" />
+            <button class="delBtn" data-id="${entry.id}">삭제</button>
         `;
 
         list.appendChild(div);
@@ -76,8 +76,6 @@ function renderGuestBookList(entries) {
             const id = e.target.dataset.id;
             const passwordInput = e.target.previousElementSibling;
             const password  = passwordInput.value;
-
-            console.log("password: ", password);
 
             deleteGuestbook(id, password);
         });
