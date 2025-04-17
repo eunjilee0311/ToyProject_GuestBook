@@ -1,4 +1,4 @@
-const BASE_URL = "http://3.34.73.84:8000/";
+const BASE_URL = "http://3.34.73.84:8000/guestbook/";
 
 //방명록 전체 불러오기 (GET)
 async function fetchGuestbooks() {
@@ -24,7 +24,7 @@ async function createGuestbook(name, title, content, password) {
 
     const data = await res.json();
     if (data.status === 200) {
-        alert("방명록 저장 성공!");
+        //alert("방명록 저장 성공!");
         fetchGuestbooks();
     } else {
         alert("방명록 저장 실패");
@@ -75,10 +75,11 @@ function renderGuestBookList(entries) {
         btn.addEventListener("click", (e) => {
             const id = e.target.dataset.id;
             const passwordInput = e.target.previousElementSibling;
-            if (passwordInput) {
-                const password  = passwordInput.value;
-                deleteGuestbook(id, password);
-            }
+            const password  = passwordInput.value;
+
+            console.log("password: ", password);
+
+            deleteGuestbook(id, password);
         });
     });
 }
