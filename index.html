@@ -8,13 +8,9 @@
 </head>
 
 <body>
-    <!-- <header>
-        <h1>◡̈ WELCOM ◡̈</h1>
-    </header> -->
     <main>
-        <!-- <h1>◡̈ WELCOM ◡̈</h1> -->
-        <h2>방명록을 남겨주세요📝</h2>
-        <div id="input-box">
+        <section id="input-box">
+            <h2>방명록을 남겨주세요📝</h2>
             <div class="row">
                 <label for="name">이름</label>
                 <input id="name" type="text" placeholder="이름" />
@@ -36,13 +32,13 @@
             </div>
 
             <button id = "saveBtn">저장</button>
-        </div>
-        
-        <article id="list">
+        </section>
+
+        <section id="guestbook-section">
             <h2>🏷️ 남겨진 기록들</h2>
-            
-        </article>
-        
+            <div id="list">
+            </div>
+        </section>
     </main>
     <script src="index.js"></script>
 </body>

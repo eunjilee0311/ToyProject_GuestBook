@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Gaegu&display=swap');
+@media (min-width: 800px) {
+    #list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+}
 
 body {
     margin: 0px;
@@ -15,7 +27,13 @@ body {
     justify-content: center;
     font-family: "Gaegu", sans-serif;
     background-color:rgb(255, 255, 228);
-    /* background-image: url('background.jpg'); */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 button {
@@ -38,28 +56,21 @@ input, textarea{
     padding: 5px;
 }
 
-#input-box {
-    /* width: 430px; */
+#input-box, #guestbook-section {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: left;
 }
 
 .row {
     display: flex;
     gap: 10px;
-    /* flex-wrap: wrap; */
 }
 
 label {
     font-weight: bold;
     line-height: 30px;
 }
-
-/* #name-pass-wrapper {
-    display: flex;
-    gap: 10px;
-} */
 
 #name, #password {
     width: 150px;
@@ -74,6 +85,7 @@ label {
 }
 
 #content {
+    resize: none;
     padding: 10px;
     width: 420px;
     height: 100px;
@@ -82,10 +94,13 @@ label {
 
 #list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* flex-direction: column; */
     justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    /* justify-content: left; */
+    /* padding-bottom: 20px; */
+    gap: 10px;
 }
 
 .entry {
@@ -95,7 +110,7 @@ label {
     margin-bottom: 15px;
     box-shadow: 0 0 8px rgba(0,0,0,0.1);
     text-align: left;
-    width: 420px;
+    width: 300px;
 }
 .entry p {
     margin: 5px 0;
@@ -103,6 +118,6 @@ label {
 
 hr {
     border: none;
-    border-top: 1px dashed gray;
+    border-top: 1px solid gray;
     margin: 10px 0;
 }

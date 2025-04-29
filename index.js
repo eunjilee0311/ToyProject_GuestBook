@@ -19,12 +19,11 @@ async function createGuestbook(name, title, content, password) {
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({name, title, content, password }),
+        body: JSON.stringify({name, title, content, password}),
         });
 
     const data = await res.json();
     if (data.status === 200) {
-        //alert("방명록 저장 성공!");
         fetchGuestbooks();
     } else {
         alert("방명록 저장 실패");
@@ -53,12 +52,11 @@ async function deleteGuestbook(id, password) {
 //화면에 랜더링
 function renderGuestBookList(entries) {
     const list = document.getElementById("list");
-    list.innerHTML = "<h2>🏷️ 남겨진 기록들</h2>"
+    list.innerHTML = "";
 
     entries.forEach((entry) => {
         const div = document.createElement("div");
         div.classList.add("entry");
-
         div.innerHTML = `
             <p><strong>${entry.name}</strong> <span style="color:gray;">(${entry.created})</span></p>
             <p><strong>제목:</strong> ${entry.title}</p>
@@ -67,18 +65,14 @@ function renderGuestBookList(entries) {
             <input type="password" class="delete-password" placeholder="비밀번호" />
             <button class="delBtn" data-id="${entry.id}">삭제</button>
         `;
-
         list.appendChild(div);
-    });
 
-    document.querySelectorAll(".delBtn").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-            const id = e.target.dataset.id;
-            const passwordInput = e.target.previousElementSibling;
-            const password  = passwordInput.value;
-
-            deleteGuestbook(id, password);
-        });
+        const button = div.querySelector("button");
+        const input = div.querySelector("input");
+        button.addEventListener("click", () => {
+            const password=input.value;
+            deleteGuestbook(entry.id, password);
+        })
     });
 }
 
