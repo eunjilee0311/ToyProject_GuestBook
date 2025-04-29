@@ -12,7 +12,7 @@ async function fetchGuestbooks() {
     }
 }
 
-//방명록 하나 저장학 (POST)
+//방명록 하나 저장하기 (POST)
 async function createGuestbook(name, title, content, password) {
     const res = await fetch(BASE_URL, {
         method: "POST",
@@ -42,7 +42,6 @@ async function deleteGuestbook(id, password) {
     
     const data  = await res.json();
     if (data.status === 200) {
-        //alert("삭제 성공");
         fetchGuestbooks();
     } else {
         alert(data.message);

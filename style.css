@@ -15,15 +15,10 @@
 body {
     margin: 0px;
     padding: 0px;
-    /* 전체 body를 flex 컨테이너로 만든다 */
     display: flex;
-    /* 자식 요소들을 위->아래로 배치 */
     flex-direction: column;
-    /* 텍스트를 가운데 정렬 */
     text-align: center;
-    /* 가로 방향 가운데 정렬 */
     align-items: center;
-    /* 세로 방향 가운데 정렬 */
     justify-content: center;
     font-family: "Gaegu", sans-serif;
     background-color:rgb(255, 255, 228);
@@ -96,10 +91,7 @@ label {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    /* flex-direction: column; */
     justify-content: center;
-    /* justify-content: left; */
-    /* padding-bottom: 20px; */
     gap: 10px;
 }
 
